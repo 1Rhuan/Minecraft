@@ -70,5 +70,5 @@ services:
 
 networks:
   minecraft_net:
-    driver: host
+    driver: overlay
     attachable: true
