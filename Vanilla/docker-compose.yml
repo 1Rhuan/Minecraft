@@ -17,7 +17,7 @@ services:
       ONLINE_MODE: "TRUE"
 
       INIT_MEMORY: "1G"
-      MAX_MEMORY: "4G"
+      MAX_MEMORY: "6G"
 
       MAX_PLAYERS: "5"
       VIEW_DISTANCE: "8"
@@ -52,7 +52,7 @@ services:
       resources:
         limits:
           cpus: "2.5"
-          memory: 6G
+          memory: 8G
         reservations:
           cpus: "1.0"
           memory: 2G
@@ -63,26 +63,6 @@ services:
       update_config:
         parallelism: 1
         order: stop-first
-
-  playit:
-    image: ghcr.io/playit-cloud/playit-agent:latest
-
-    environment:
-      SECRET_KEY: "${PLAYIT_SECRET_KEY}"
-
-    networks:
-      - minecraft_net
-
-    deploy:
-      mode: replicated
-      replicas: 1
-
-      placement:
-        constraints:
-          - node.labels.minecraft == true
-
-      restart_policy:
-        condition: on-failure
 
 networks:
   minecraft_net:
