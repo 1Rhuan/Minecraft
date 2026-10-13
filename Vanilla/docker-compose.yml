@@ -28,11 +28,11 @@ services:
 
       ENABLE_RCON: "TRUE"
       RCON_PORT: "25575"
-      
-      stdin_open: true
-      tty: true
 
       TZ: "America/Sao_Paulo"
+      
+    stdin_open: true
+    tty: true
 
     volumes:
       - /opt/minecraft/data:/data
