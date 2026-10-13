@@ -5,6 +5,12 @@ services:
   minecraft:
     image: itzg/minecraft-server:latest
 
+    ports:
+      - target: 25565
+        published: 25565
+        protocol: tcp
+        mode: host
+
     environment:
       EULA: "TRUE"
       TYPE: "PAPER"
